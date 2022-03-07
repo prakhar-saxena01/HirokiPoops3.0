@@ -37,9 +37,9 @@ def excellent(player, increment_bullets=False):
 
 
 def game_loop(character="Hiroki"):
-    pygame.mixer.music.load("sounds/stained_glass.mp3")
+    pygame.mixer.music.load("../sounds/stained_glass.mp3")
     pygame.mixer.music.play(loops=-1)
-    sky_image = pygame.image.load("img/sky.png").convert()
+    sky_image = pygame.image.load("../img/sky.png").convert()
 
     if character == "Hiroki":
         player = Player()
