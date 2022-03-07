@@ -38,5 +38,3 @@ To compile for any platform, run the following command in the terminal or Comman
 `pyinstaller HirokiPoops.spec`
 After the command has completed, there will be two new folders: "dist" and "build."
 You may delete the build folder. The compiled version will be in the folder: "dist/HirokiPoops."
-
-Enjoy! 💩
