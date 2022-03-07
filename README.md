@@ -1,8 +1,6 @@
-# HirokiPoops
+# HirokiPoops ![](icon.ico)
+
 This game is Hiroki's Poops.
-<br>
-![](icon.ico)
-<br>
 Hiroki's Poops is a game where you fly around and dodge poops.
 
 [![Run on Repl.it](https://repl.it/badge/github/mak448a/HirokiPoops2.1)](https://repl.it/github/mak448a/HirokiPoops2.1)
