@@ -11,20 +11,22 @@ class Player(pygame.sprite.Sprite):
         if character == "Hiroki":
             self.image = load_image("img/Hiroki.png").convert()
             self.collision_sound = load_sound("sounds/Hiroki_crash.wav")
+
         elif character == "Edward":
             self.image = load_image("img/Edward.png").convert()
             self.collision_sound = load_sound("sounds/Edward_crash.wav")
+
         else:
             self.image = load_image("img/Hiroki.png").convert()
             self.collision_sound = load_sound("sounds/Hiroki_crash.wav")
 
         self.image.set_colorkey((255, 185, 216), pygame.RLEACCEL)
         self.rect = self.image.get_rect()
-        self.bullets = []
-        self.missile_cool_down = 0
-        self.mass_missile_cool_down = 0
-        self.bullet_sound = load_sound("sounds/shoot_sound.wav")
-        self.amount_of_bullets = 10
+        # self.bullets = []
+        # self.missile_cool_down = 0
+        # self.mass_missile_cool_down = 0
+        # self.bullet_sound = load_sound("sounds/shoot_sound.wav")
+        # self.amount_of_bullets = 10
 
     def update(self, pressed_keys, clock):
         if pressed_keys[pygame.K_UP]:
