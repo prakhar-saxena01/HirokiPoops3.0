@@ -27,6 +27,7 @@ def main(win):
         win.blit(sky_image, (0, 0))
 
         pygame.display.update()
+        clock.tick(30)
 
 
 if __name__ == '__main__':
