@@ -1,6 +1,6 @@
 import sys
 import pygame
-from utils import window, width, height
+from utils import window
 
 pygame.init()
 
