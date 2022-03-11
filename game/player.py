@@ -28,7 +28,7 @@ class Player(pygame.sprite.Sprite):
         # self.bullet_sound = load_sound("sounds/shoot_sound.wav")
         # self.amount_of_bullets = 10
 
-    def update(self, pressed_keys, clock):
+    def update(self, pressed_keys):
         if pressed_keys[pygame.K_UP]:
             self.rect.move_ip(0, -5)
 
