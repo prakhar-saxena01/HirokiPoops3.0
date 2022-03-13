@@ -1,7 +1,9 @@
 import pygame
+
 from utils.screen import window
 from utils.load_image import load_image
 from game.player import Player
+
 import sys
 import os
 

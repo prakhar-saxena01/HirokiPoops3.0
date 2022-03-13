@@ -1,2 +1,3 @@
 Rewrite all of the code and make it organized.
-Add MIT License
+Add a license
+Add menus
