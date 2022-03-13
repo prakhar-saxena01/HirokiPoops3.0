@@ -7,6 +7,7 @@ from game.player import Player
 import sys
 import os
 
+
 pygame.init()
 
 
@@ -26,8 +27,14 @@ player_group = pygame.sprite.Group()
 player_group.add(player)
 
 
-def main(win):
+def redraw_window(win):
+    win.blit(sky_image, (0, 0))
+    player_group.draw(win)
 
+    pygame.display.update()
+
+
+def main(win):
     # Play some music
     pygame.mixer.music.load(os.path.join(os.getcwd(), "sounds/stained_glass.mp3"))
     pygame.mixer.music.play(loops=-1)
@@ -38,12 +45,11 @@ def main(win):
                 pygame.quit()
                 sys.exit()
 
-        win.blit(sky_image, (0, 0))
+        # Deal with user input
         keys = pygame.key.get_pressed()
         player_group.update(keys)
-        player_group.draw(win)
+        redraw_window(win)
 
-        pygame.display.update()
         clock.tick(30)
 
 
