@@ -2,6 +2,7 @@ import sys
 import pygame
 from utils.screen import window
 from utils.load_image import load_image
+from game.player import Player
 
 pygame.init()
 
@@ -16,6 +17,11 @@ pygame.time.set_timer(add_poop, 180)
 add_cloud = pygame.USEREVENT + 2
 pygame.time.set_timer(add_cloud, 1000)
 
+# Player code
+player = Player()
+player_group = pygame.sprite.Group()
+player_group.add(player)
+
 
 def main(win):
     while True:
@@ -25,7 +31,9 @@ def main(win):
                 sys.exit()
 
         win.blit(sky_image, (0, 0))
-
+        keys = pygame.key.get_pressed()
+        player_group.update(keys)
+        player_group.draw(win)
         pygame.display.update()
         clock.tick(30)
 
