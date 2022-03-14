@@ -6,11 +6,11 @@ from menus.credits_menu import CreditsMenu
 
 
 class Game:
-    def __init__(self, window):
+    def __init__(self, window: pygame.Surface):
         pygame.init()
         self.running, self.playing = True, False
         self.up_key, self.down_key, self.start_key, self.back_key = False, False, False, False
-        self.display_width, self.display_height = 480, 500
+        self.display_width, self.display_height =  window.get_width(), window.get_height()
         self.display = pygame.Surface((self.display_width, self.display_height))
         self.window = window
         # self.font_name = "8BitWonder/8-BIT WONDER.TTF"

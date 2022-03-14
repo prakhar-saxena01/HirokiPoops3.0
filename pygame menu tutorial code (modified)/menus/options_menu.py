@@ -5,8 +5,8 @@ class OptionsMenu(Menu):
     def __init__(self, game):
         super(OptionsMenu, self).__init__(game)
         self.state = "Volume"
-        self.volume_x, self.volume_y = self.mid_width, self.mid_height + 10
-        self.controls_x, self.controls_y = self.mid_width, self.mid_height + 50
+        self.volume_x, self.volume_y = self.mid_width, self.mid_height - 80
+        self.controls_x, self.controls_y = self.mid_width, self.mid_height - 30
         self.cursor_rect.midtop = (self.volume_x + self.offset, self.volume_y)
 
     def display_menu(self):

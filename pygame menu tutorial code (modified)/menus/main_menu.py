@@ -5,9 +5,9 @@ class MainMenu(Menu):
     def __init__(self, game):
         super(MainMenu, self).__init__(game)
         self.state = "Start"
-        self.start_x, self.start_y, = self.mid_width, self.mid_height - 20
-        self.options_x, self.options_y, = self.mid_width, self.mid_height + 20
-        self.credits_x, self.credits_y, = self.mid_width, self.mid_height + 60
+        self.start_x, self.start_y, = self.mid_width, self.mid_height - 120
+        self.options_x, self.options_y, = self.mid_width, self.mid_height - 70
+        self.credits_x, self.credits_y, = self.mid_width, self.mid_height - 20
         self.cursor_rect.midtop = (self.start_x + self.offset, self.start_y)
 
     def display_menu(self):
