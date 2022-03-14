@@ -22,6 +22,9 @@ class CreditsMenu(Menu):
                                 2 - 20)
             self.game.draw_text("Artwork made by my brothers", 25, self.game.display_width / 2, self.game.display_height
                                 / 2 + 10)
+            self.game.draw_text("Inspired by TechWithTim and sentdex", 25, self.game.display_width / 2,
+                                self.game.display_height
+                                / 2 + 40)
             self.game.draw_text("© mak448a 2022", 25, self.game.display_width / 2, self.game.display_height /
-                                2 + 70)
+                                2 + 100)
             self.blit_screen()
