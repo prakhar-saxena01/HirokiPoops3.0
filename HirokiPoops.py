@@ -46,6 +46,7 @@ def redraw_window(win):
 
 def handle_collisions(player_group1: pygame.sprite.GroupSingle, poop_group: pygame.sprite.Group):
     if pygame.sprite.spritecollideany(player_group1.sprite, poop_group):
+        pygame.mixer.music.stop()
         player_group1.sprite.die()
         # show game over screen, with highscore and other stuff
         # Return false for running
@@ -79,10 +80,13 @@ def main(win):
 
         mostly_everything.update()
         redraw_window(win)
+        # handle_collisions updates the run variable
+        # If the player hit a poop, set run to false
         run = handle_collisions(player_group, poops)
 
         clock.tick(30)
 
+    # Delay so that you can hear the crash sound before the window exits
     pygame.time.delay(2000)
 
 
