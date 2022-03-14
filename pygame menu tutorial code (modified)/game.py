@@ -43,9 +43,9 @@ class Game:
                 sys.exit()
 
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_RIGHT:
+                if event.key == pygame.K_RIGHT or event.key == pygame.K_RETURN:
                     self.start_key = True
-                if event.key == pygame.K_LEFT:
+                if event.key == pygame.K_LEFT or event.key == pygame.K_BACKSPACE:
                     self.back_key = True
                 if event.key == pygame.K_DOWN:
                     self.down_key = True
