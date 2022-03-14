@@ -1,8 +1,8 @@
 import pygame
 import sys
-from .options_menu import OptionsMenu
-from .main_menu import MainMenu
-from .credits_menu import CreditsMenu
+from menus.options_menu import OptionsMenu
+from menus.main_menu import MainMenu
+from menus.credits_menu import CreditsMenu
 
 
 class Game:
