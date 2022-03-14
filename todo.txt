@@ -2,3 +2,4 @@ Rewrite all of the code and make it organized.
 Add a license
 Add menus
 Add pause function
+show game over screen

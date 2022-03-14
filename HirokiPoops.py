@@ -44,12 +44,23 @@ def redraw_window(win):
     pygame.display.update()
 
 
+def handle_collisions(player_group1: pygame.sprite.GroupSingle, poop_group: pygame.sprite.Group):
+    if pygame.sprite.spritecollideany(player_group1.sprite, poop_group):
+        player_group1.sprite.die()
+        # show game over screen, with highscore and other stuff
+        # Return false for running
+        return False
+    else:
+        return True
+
+
 def main(win):
     # Play some music
     pygame.mixer.music.load(os.path.join(os.getcwd(), "sounds/stained_glass.mp3"))
     pygame.mixer.music.play(loops=-1)
+    run = True
 
-    while True:
+    while run:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
@@ -65,10 +76,14 @@ def main(win):
         # Deal with user input
         keys = pygame.key.get_pressed()
         player_group.update(keys)
+
         mostly_everything.update()
         redraw_window(win)
+        run = handle_collisions(player_group, poops)
 
         clock.tick(30)
+
+    pygame.time.delay(2000)
 
 
 if __name__ == '__main__':
