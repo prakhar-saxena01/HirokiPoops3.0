@@ -47,7 +47,7 @@ def redraw_window(win):
 def handle_collisions(player_group1: pygame.sprite.GroupSingle, poop_group: pygame.sprite.Group):
     if pygame.sprite.spritecollideany(player_group1.sprite, poop_group):
         pygame.mixer.music.stop()
-        player_group1.sprite.die()
+        player.die()
         # show game over screen, with highscore and other stuff
         # Return false for running
         return False
@@ -72,7 +72,6 @@ def main(win):
 
                 poops.add(new_poop)
                 mostly_everything.add(new_poop)
-                print("New poop")
 
         # Deal with user input
         keys = pygame.key.get_pressed()
