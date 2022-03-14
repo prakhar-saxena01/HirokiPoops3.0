@@ -1,0 +1,64 @@
+import pygame
+import sys
+from .options_menu import OptionsMenu
+from .main_menu import MainMenu
+from .credits_menu import CreditsMenu
+
+
+class Game:
+    def __init__(self):
+        pygame.init()
+        self.running, self.playing = True, False
+        self.up_key, self.down_key, self.start_key, self.back_key = False, False, False, False
+        self.display_width, self.display_height = 480, 500
+        self.display = pygame.Surface((self.display_width, self.display_height))
+        self.window = pygame.display.set_mode((self.display_width, self.display_height), pygame.SCALED)
+        # self.font_name = "8BitWonder/8-BIT WONDER.TTF"
+        self.font_name = "clearsans"
+        self.main_menu = MainMenu(self)
+        self.options = OptionsMenu(self)
+        self.credits = CreditsMenu(self)
+        self.current_menu = self.main_menu
+
+    def game_loop(self):
+        while self.playing:
+            self.check_events()
+            if self.start_key:
+                self.playing = False
+            elif self.back_key:
+                self.playing = False
+
+            self.display.fill("black")
+            self.draw_text("Playing Hiroki's Poops", 40, self.display_width / 2, self.display_height / 2)
+            self.window.blit(self.display, (0, 0))
+            pygame.display.update()
+            self.reset_keys()
+
+    def check_events(self):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                self.playing, self.running = False, False
+                self.current_menu.run_display = False
+                pygame.quit()
+                sys.exit()
+
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RIGHT:
+                    self.start_key = True
+                if event.key == pygame.K_LEFT:
+                    self.back_key = True
+                if event.key == pygame.K_DOWN:
+                    self.down_key = True
+                if event.key == pygame.K_UP:
+                    self.up_key = True
+
+    def reset_keys(self):
+        self.up_key, self.down_key, self.start_key, self.back_key = False, False, False, False
+
+    def draw_text(self, text, size, x, y):
+        # font = pygame.font.Font(self.font_name, size)
+        font = pygame.font.SysFont(self.font_name, size)
+        text_surface = font.render(text, True, "white")
+        text_rect = text_surface.get_rect()
+        text_rect.center = (x, y)
+        self.display.blit(text_surface, text_rect)
