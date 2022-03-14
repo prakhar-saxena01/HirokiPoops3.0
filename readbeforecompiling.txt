@@ -4,6 +4,7 @@ To compile Hiroki's Poops, you must have python3, pyinstaller, pip3, and pygame 
 
 1. Reset the highscore to zero by opening up notepad and overwriting everything in the file with 0.
 2. Delete the __pycache__ folder inside utils.
-3. Use the command "pyinstaller HirokiPoops.spec"
-4. The executable file will be inside the HirokiPoops folder inside the dist folder.
-5. Enjoy! 😀️
+3. Update the "whats new.txt" file
+4. Use the command "pyinstaller HirokiPoops.spec"
+5. The executable file will be inside the HirokiPoops folder inside the dist folder.
+6. Enjoy! 😀️
