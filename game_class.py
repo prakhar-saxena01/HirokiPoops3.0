@@ -14,7 +14,7 @@ class Game:
         self.display_width, self.display_height = window.get_width(), window.get_height()
         self.display = pygame.Surface((self.display_width, self.display_height))
         self.window = window
-        self.font_name = "clearsans"
+        self.font_name = "fonts/Loma.ttf"
         self.main_menu = MainMenu(self)
         self.options = OptionsMenu(self)
         self.credits = CreditsMenu(self)
@@ -45,8 +45,8 @@ class Game:
         self.up_key, self.down_key, self.start_key, self.back_key = False, False, False, False
 
     def draw_text(self, text, size, x, y):
-        # font = pygame.font.Font(self.font_name, size)
-        font = pygame.font.SysFont(self.font_name, size)
+        font = pygame.font.Font(self.font_name, size)
+        # font = pygame.font.SysFont(self.font_name, size)
         text_surface = font.render(text, True, "white")
         text_rect = text_surface.get_rect()
         text_rect.center = (x, y)
