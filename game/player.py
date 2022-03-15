@@ -7,7 +7,7 @@ from utils.load_sound import load_sound
 class Player(pygame.sprite.Sprite):
     def __init__(self, character="Hiroki"):
         super(Player, self).__init__()
-        
+
         if character == "Hiroki":
             self.image = load_image("img/Hiroki.png").convert()
             self.collision_sound = load_sound("sounds/Hiroki_crash.wav")
@@ -22,6 +22,8 @@ class Player(pygame.sprite.Sprite):
 
         self.image.set_colorkey((255, 185, 216), pygame.RLEACCEL)
         self.rect = self.image.get_rect()
+
+        self.rect.move_ip(10, height / 2)
         # self.bullets = []
         # self.missile_cool_down = 0
         # self.mass_missile_cool_down = 0

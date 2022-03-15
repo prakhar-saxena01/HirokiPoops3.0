@@ -11,7 +11,8 @@ a = Analysis(['HirokiPoops.py'],
                 ('fonts', 'fonts'),
                 ('img', 'img'),
                 ('sounds', 'sounds'),
-                ('utils', 'utils')
+                ('utils', 'utils'),
+                ('saves', 'saves')
              ],
              hiddenimports=[],
              hookspath=[],
