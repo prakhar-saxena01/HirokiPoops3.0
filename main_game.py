@@ -66,7 +66,7 @@ def main(win, game_class):
                 pygame.quit()
                 sys.exit()
 
-            elif event.type == add_poop:
+            if event.type == add_poop:
                 new_poop = Poop(poop_max_speed, poop_minimum_speed)
 
                 poops.add(new_poop)
@@ -85,7 +85,7 @@ def main(win, game_class):
         clock.tick(30)
 
     # Delay so that you can hear the crash sound before the window exits
-    pygame.time.delay(2000)
+    pygame.time.delay(1000)
     game_class.playing = False
 
 
