@@ -51,10 +51,9 @@ def main(win, game_class):
     poops = pygame.sprite.Group()
 
     # Play some music
-    pygame.mixer.music.load(os.path.join(os.getcwd(), "sounds/stained_glass.mp3"))
+    pygame.mixer.music.load(f"{os.getcwd()}/sounds/stained_glass.mp3")
     pygame.mixer.music.play(loops=-1)
     run = True
-    freeze_keys = True
 
     while run:
         for event in pygame.event.get():

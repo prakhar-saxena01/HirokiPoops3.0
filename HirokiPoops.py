@@ -7,7 +7,7 @@ pygame.init()
 
 
 g = Game(window)
-pygame.mixer.music.load(os.path.join(os.getcwd(), "sounds/he'll_take_care_of_the_rest.mp3"))
+pygame.mixer.music.load(f"{os.getcwd()}/sounds/he'll_take_care_of_the_rest.mp3")
 pygame.mixer.music.play(loops=-1)
 
 while g.running:

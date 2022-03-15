@@ -13,6 +13,6 @@ def load_image(rel_path: str):
 
     """
 
-    new_path = os.path.join(os.getcwd(), rel_path)
+    new_path = f"{os.getcwd()}/{rel_path}"
     image = pygame.image.load(new_path)
     return image
