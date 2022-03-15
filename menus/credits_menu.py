@@ -1,4 +1,5 @@
 from .menu import Menu
+from utils.load_image import load_image
 
 
 class CreditsMenu(Menu):
@@ -7,6 +8,7 @@ class CreditsMenu(Menu):
 
     def display_menu(self):
         self.run_display = True
+        image = load_image("img/title.png").convert()
 
         while self.run_display:
             self.game.check_events()
@@ -15,6 +17,7 @@ class CreditsMenu(Menu):
                 self.run_display = False
 
             self.game.display.fill("black")
+            self.game.display.blit(image, (0, 0))
             self.game.draw_text("Credits", 40, self.game.display_width / 2, self.game.display_height / 2 - 100)
             self.game.draw_text("Music", 30, self.game.display_width / 2, self.game.
                                 display_height / 2 - 50)

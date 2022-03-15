@@ -1,4 +1,5 @@
 from .menu import Menu
+from utils.load_image import load_image
 
 
 class OptionsMenu(Menu):
@@ -11,11 +12,13 @@ class OptionsMenu(Menu):
 
     def display_menu(self):
         self.run_display = True
+        image = load_image("img/title.png").convert()
 
         while self.run_display:
             self.game.check_events()
             self.check_input()
             self.game.display.fill("black")
+            self.game.display.blit(image, (0, 0))
             self.game.draw_text("Options", 40, self.game.display_width / 2, self.game.display_height / 2 - 50)
             self.game.draw_text("Volume", 40, self.volume_x, self.volume_y)
             self.game.draw_text("Controls", 40, self.controls_x, self.controls_y)

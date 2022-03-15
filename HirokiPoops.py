@@ -4,6 +4,7 @@ from utils.screen import window
 import os
 
 pygame.init()
+pygame.mouse.set_visible(False)
 
 
 g = Game(window)
