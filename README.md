@@ -20,7 +20,7 @@ You can download any one of the releases at the website above.
 3. Pyinstaller
 
 ### Install dependencies
-Install Python from the website.
+Install Python from <a href="python.org">python.org</a>.
 
 To install pygame and Pyinstaller, use these commands.
 
@@ -35,6 +35,8 @@ If the above command does not work, try checking if Python is on your path.
 
 ### Commands
 To compile for any platform, run the following command in the terminal or Command Prompt.
+
 `pyinstaller HirokiPoops.spec`
+
 After the command has completed, there will be two new folders: "dist" and "build."
 You may delete the build folder. The compiled version will be in the folder: "dist/HirokiPoops."
