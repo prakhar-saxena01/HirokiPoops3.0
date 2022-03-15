@@ -16,12 +16,12 @@ class CreditsMenu(Menu):
 
             self.game.display.fill("black")
             self.game.draw_text("Credits", 40, self.game.display_width / 2, self.game.display_height / 2 - 100)
-            self.game.draw_text("Menu made by Cristian Duenas,", 25, self.game.display_width / 2, self.game.
+            self.game.draw_text("Music", 30, self.game.display_width / 2, self.game.
                                 display_height / 2 - 50)
-            self.game.draw_text("modified by me :)", 25, self.game.display_width / 2, self.game.display_height /
-                                2 - 20)
-            self.game.draw_text("Artwork made by my brothers", 25, self.game.display_width / 2, self.game.display_height
+            self.game.draw_text("Keith Green", 25, self.game.display_width / 2, self.game.display_height /
+                                2 - 10)
+            self.game.draw_text("", 25, self.game.display_width / 2, self.game.display_height
                                 / 2 + 10)
             self.game.draw_text("© mak448a 2022", 25, self.game.display_width / 2, self.game.display_height /
-                                2 + 70)
+                                2 + 60)
             self.blit_screen()
