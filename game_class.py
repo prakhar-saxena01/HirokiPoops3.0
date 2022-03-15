@@ -4,6 +4,7 @@ from menus.options_menu import OptionsMenu
 from menus.main_menu import MainMenu
 from menus.credits_menu import CreditsMenu
 from main_game import main
+import os
 
 
 class Game:
@@ -14,7 +15,7 @@ class Game:
         self.display_width, self.display_height = window.get_width(), window.get_height()
         self.display = pygame.Surface((self.display_width, self.display_height))
         self.window = window
-        self.font_name = "fonts/Loma.ttf"
+        self.font_name = f"{os.getcwd()}/fonts/Loma.ttf"
         self.main_menu = MainMenu(self)
         self.options = OptionsMenu(self)
         self.credits = CreditsMenu(self)
