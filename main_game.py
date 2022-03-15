@@ -1,6 +1,5 @@
 import pygame
 
-
 from utils.load_image import load_image
 
 from game.player import Player
@@ -9,17 +8,13 @@ from game.poop import Poop
 import sys
 import os
 
-
 pygame.init()
-
 
 clock = pygame.time.Clock()
 sky_image = load_image("img/sky.png").convert()
 
-
 poop_max_speed = 20
 poop_minimum_speed = 7
-
 
 # Add user events so that we can add poops on a timer
 add_poop = pygame.USEREVENT + 1
@@ -59,6 +54,7 @@ def main(win, game_class):
     pygame.mixer.music.load(os.path.join(os.getcwd(), "sounds/stained_glass.mp3"))
     pygame.mixer.music.play(loops=-1)
     run = True
+    freeze_keys = True
 
     while run:
         for event in pygame.event.get():
@@ -72,8 +68,10 @@ def main(win, game_class):
                 poops.add(new_poop)
                 mostly_everything.add(new_poop)
 
-        # Deal with user input
         keys = pygame.key.get_pressed()
+
+        print("fps:", clock.get_fps())
+
         player_group.update(keys)
 
         mostly_everything.update()
@@ -84,10 +82,7 @@ def main(win, game_class):
 
         clock.tick(30)
 
-    # Delay so that you can hear the crash sound before the window exits
-    pygame.time.delay(1000)
     game_class.playing = False
-
 
 # if __name__ == '__main__':
 #     main(window)
