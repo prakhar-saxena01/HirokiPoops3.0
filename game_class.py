@@ -11,10 +11,9 @@ class Game:
         pygame.init()
         self.running, self.playing = True, False
         self.up_key, self.down_key, self.start_key, self.back_key = False, False, False, False
-        self.display_width, self.display_height =  window.get_width(), window.get_height()
+        self.display_width, self.display_height = window.get_width(), window.get_height()
         self.display = pygame.Surface((self.display_width, self.display_height))
         self.window = window
-        # self.font_name = "8BitWonder/8-BIT WONDER.TTF"
         self.font_name = "clearsans"
         self.main_menu = MainMenu(self)
         self.options = OptionsMenu(self)

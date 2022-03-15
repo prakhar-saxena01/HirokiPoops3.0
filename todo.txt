@@ -5,3 +5,4 @@ Add pause function
 show game over screen
 add saves
 add character select with edward and hiroki
+add bullets
