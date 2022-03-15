@@ -47,7 +47,6 @@ class Game:
 
     def draw_text(self, text, size, x, y):
         font = pygame.font.Font(self.font_name, size)
-        # font = pygame.font.SysFont(self.font_name, size)
         text_surface = font.render(text, True, "white")
         text_rect = text_surface.get_rect()
         text_rect.center = (x, y)
