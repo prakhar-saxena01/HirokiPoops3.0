@@ -36,4 +36,5 @@ class OptionsMenu(Menu):
                 self.cursor_rect.midtop = (self.volume_x + self.offset, self.volume_y)
         elif self.game.start_key:
             # Volume menu?
+            # Options menu?
             pass
