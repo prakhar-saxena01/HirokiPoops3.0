@@ -22,19 +22,6 @@ class Game:
         self.current_menu = self.main_menu
 
     def game_loop(self):
-        # while self.playing:
-        #     self.check_events()
-        #     if self.start_key:
-        #         self.playing = False
-        #     elif self.back_key:
-        #         self.playing = False
-        #
-        #     self.display.fill("black")
-        #     self.draw_text("Playing Hiroki's Poops", 40, self.display_width / 2, self.display_height / 2)
-        #     self.window.blit(self.display, (0, 0))
-        #     pygame.display.update()
-        #     self.reset_keys()
-
         main(self.window, self)
 
     def check_events(self):
