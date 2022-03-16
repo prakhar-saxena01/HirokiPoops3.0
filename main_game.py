@@ -83,5 +83,3 @@ def main(win, game_class):
 
     game_class.playing = False
 
-# if __name__ == '__main__':
-#     main(window)
