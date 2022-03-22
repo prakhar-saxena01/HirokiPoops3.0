@@ -4,6 +4,7 @@ from utils.load_image import load_image
 
 from game.player import Player
 from game.poop import Poop
+from game.cloud import Cloud
 
 import sys
 import os
@@ -66,6 +67,10 @@ def main(win, game_class):
 
                 poops.add(new_poop)
                 mostly_everything.add(new_poop)
+
+            if event.type == add_cloud:
+                new_cloud = Cloud()
+                mostly_everything.add(new_cloud)
 
         keys = pygame.key.get_pressed()
 
