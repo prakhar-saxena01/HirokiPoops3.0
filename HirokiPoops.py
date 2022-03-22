@@ -17,5 +17,3 @@ while g.running:
         g.game_loop()
         pygame.mixer.music.load(f"{os.getcwd()}/sounds/he'll_take_care_of_the_rest.mp3")
         pygame.mixer.music.play(loops=-1)
-
-print("Quit")

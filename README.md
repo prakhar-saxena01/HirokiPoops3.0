@@ -28,7 +28,7 @@ To install pygame and Pyinstaller, use these commands.
 
 `pip install pygame pyinstaller`
 
-If the above command does not work, try checking if Python is on your path.
+If the above command does not work, try checking if Python is on your Windows path variable.
 
 #### Mac and Linux
 `pip3 install pygame pyinstaller`
