@@ -9,10 +9,12 @@ a = Analysis(['HirokiPoops.py'],
              binaries=[],
              datas=[
                 ('fonts', 'fonts'),
+                ('game', 'game'),
                 ('img', 'img'),
+                ('menus', 'menus')
+                ('saves', 'saves'),
                 ('sounds', 'sounds'),
                 ('utils', 'utils'),
-                ('saves', 'saves')
              ],
              hiddenimports=[],
              hookspath=[],
