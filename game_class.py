@@ -3,6 +3,7 @@ import sys
 from menus.options_menu import OptionsMenu
 from menus.main_menu import MainMenu
 from menus.credits_menu import CreditsMenu
+from menus.crash_menu import CrashMenu
 from main_game import main
 import os
 
@@ -19,6 +20,7 @@ class Game:
         self.main_menu = MainMenu(self)
         self.options = OptionsMenu(self)
         self.credits = CreditsMenu(self)
+        self.crash_menu = CrashMenu(self)
         self.current_menu = self.main_menu
 
     def game_loop(self):

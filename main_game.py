@@ -43,6 +43,23 @@ def handle_collisions(player_group1: pygame.sprite.GroupSingle, poop_group: pyga
         return True
 
 
+def handle_events(poops, mostly_everything):
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+
+        if event.type == add_poop:
+            new_poop = Poop(poop_max_speed, poop_minimum_speed)
+
+            poops.add(new_poop)
+            mostly_everything.add(new_poop)
+
+        if event.type == add_cloud:
+            new_cloud = Cloud()
+            mostly_everything.add(new_cloud)
+
+
 def main(win, game_class):
     # Player code
     player = Player()
@@ -57,20 +74,7 @@ def main(win, game_class):
     run = True
 
     while run:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
-
-            if event.type == add_poop:
-                new_poop = Poop(poop_max_speed, poop_minimum_speed)
-
-                poops.add(new_poop)
-                mostly_everything.add(new_poop)
-
-            if event.type == add_cloud:
-                new_cloud = Cloud()
-                mostly_everything.add(new_cloud)
+        handle_events(poops, mostly_everything)
 
         keys = pygame.key.get_pressed()
 
@@ -87,4 +91,4 @@ def main(win, game_class):
         clock.tick(30)
 
     game_class.playing = False
-
+    game_class.current_menu = game_class.crash_menu
