@@ -1,0 +1,1 @@
+run = "echo Starting... && pip3 install pygame && python3 HirokiPoops.py"
