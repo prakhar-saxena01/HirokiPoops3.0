@@ -1,4 +1,6 @@
+import pygame
 from .menu import Menu
+import os
 
 
 class CrashMenu(Menu):
@@ -12,6 +14,8 @@ class CrashMenu(Menu):
             self.game.check_events()
             if self.game.start_key or self.game.back_key:
                 self.game.current_menu = self.game.main_menu
+                pygame.mixer.music.load(f"{os.getcwd()}/sounds/he'll_take_care_of_the_rest.mp3")
+                pygame.mixer.music.play(loops=-1)
                 self.run_display = False
 
             self.game.display.fill("black")
