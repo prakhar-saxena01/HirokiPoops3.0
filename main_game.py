@@ -78,7 +78,7 @@ def main(win, game_class):
 
         keys = pygame.key.get_pressed()
 
-        print("fps:", clock.get_fps())
+        print("FPS:", clock.get_fps())
 
         player_group.update(keys)
 
