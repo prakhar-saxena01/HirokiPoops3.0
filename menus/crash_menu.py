@@ -22,9 +22,11 @@ class CrashMenu(Menu):
 
             self.game.display.fill("black")
             self.game.display.blit(image, (0, 0))
-            self.game.draw_text("You crashed.", 60, self.game.display_width / 2, self.game.display_height / 2 - 50)
-            self.game.draw_text("Press enter to", 40, self.game.display_width / 2, self.game.display_height / 2)
+            self.game.draw_text("You crashed.", 60, self.game.display_width / 2, self.game.display_height / 2 - 50,
+                                color="black")
+            self.game.draw_text("Press enter to", 40, self.game.display_width / 2, self.game.display_height / 2,
+                                color="black")
             self.game.draw_text("return to main menu", 40, self.game.display_width / 2, self.game.display_height / 2 +
-                                40)
+                                40, color="black")
             self.blit_screen()
             # Add character select, main menu, and quit menu options here

@@ -47,9 +47,9 @@ class Game:
     def reset_keys(self):
         self.up_key, self.down_key, self.start_key, self.back_key = False, False, False, False
 
-    def draw_text(self, text, size, x, y):
+    def draw_text(self, text, size, x, y, color="white"):
         font = pygame.font.Font(self.font_name, size)
-        text_surface = font.render(text, True, "white")
+        text_surface = font.render(text, True, color)
         text_rect = text_surface.get_rect()
         text_rect.center = (x, y)
         self.display.blit(text_surface, text_rect)
