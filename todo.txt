@@ -6,3 +6,5 @@ add saves
 add character select with edward and hiroki
 add bullets
 Add joystick support
+add score counter
+add save screenshot and score

@@ -13,6 +13,7 @@ pygame.init()
 
 clock = pygame.time.Clock()
 sky_image = load_image("img/sky.png").convert()
+score_font = pygame.font.Font("fonts/Loma.ttf", 40)
 
 poop_max_speed = 20
 poop_minimum_speed = 7
@@ -24,20 +25,23 @@ add_cloud = pygame.USEREVENT + 2
 pygame.time.set_timer(add_cloud, 1000)
 
 
-def redraw_window(win, player_group, mostly_everything):
+def redraw_window(win, player_group, mostly_everything, score):
     win.blit(sky_image, (0, 0))
     player_group.draw(win)
     mostly_everything.draw(win)
 
+    score_image = score_font.render(str(score), True, "red")
+    win.blit(score_image, (0, 0))
+
     pygame.display.update()
 
 
-def handle_collisions(player_group1: pygame.sprite.GroupSingle, poop_group: pygame.sprite.Group, player):
+def handle_collisions(win, player_group1: pygame.sprite.GroupSingle, poop_group: pygame.sprite.Group, player):
     if pygame.sprite.spritecollideany(player_group1.sprite, poop_group):
         pygame.mixer.music.stop()
         player.die()
-        # show game over screen, with highscore and other stuff
         # Return false for running
+        pygame.image.save(win, "img/tmp/screenshot.png")
         return False
     else:
         return True
@@ -68,12 +72,16 @@ def main(win, game_class):
     mostly_everything = pygame.sprite.Group()
     poops = pygame.sprite.Group()
 
+    score = 0
+
     # Play some music
     pygame.mixer.music.load(f"{os.getcwd()}/sounds/stained_glass.mp3")
     pygame.mixer.music.play(loops=-1)
     run = True
 
     while run:
+        score += 1
+
         handle_events(poops, mostly_everything)
 
         keys = pygame.key.get_pressed()
@@ -83,10 +91,10 @@ def main(win, game_class):
         player_group.update(keys)
 
         mostly_everything.update()
-        redraw_window(win, player_group, mostly_everything)
+        redraw_window(win, player_group, mostly_everything, score)
         # handle_collisions updates the run variable
         # If the player hit a poop, set run to false
-        run = handle_collisions(player_group, poops, player_group.sprite)
+        run = handle_collisions(win, player_group, poops, player_group.sprite)
 
         clock.tick(30)
 

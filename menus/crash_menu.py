@@ -1,5 +1,6 @@
 import pygame
 from .menu import Menu
+from utils.load_image import load_image
 import os
 
 
@@ -9,6 +10,7 @@ class CrashMenu(Menu):
 
     def display_menu(self):
         self.run_display = True
+        image = load_image("img/tmp/screenshot.png").convert()
 
         while self.run_display:
             self.game.check_events()
@@ -19,6 +21,10 @@ class CrashMenu(Menu):
                 self.run_display = False
 
             self.game.display.fill("black")
-            self.game.draw_text("You Crashed.", 60, self.game.display_width / 2, self.game.display_height / 2)
+            self.game.display.blit(image, (0, 0))
+            self.game.draw_text("You crashed.", 60, self.game.display_width / 2, self.game.display_height / 2 - 50)
+            self.game.draw_text("Press enter to", 40, self.game.display_width / 2, self.game.display_height / 2)
+            self.game.draw_text("return to main menu", 40, self.game.display_width / 2, self.game.display_height / 2 +
+                                40)
             self.blit_screen()
             # Add character select, main menu, and quit menu options here
