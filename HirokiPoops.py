@@ -4,6 +4,9 @@ from utils.screen import window
 
 import os
 
+if os.path.exists(f"{os.getcwd()}/img/tmp/screenshot.png"):
+    os.remove(f"{os.getcwd()}/img/tmp/screenshot.png")
+
 pygame.init()
 pygame.mouse.set_visible(False)
 
