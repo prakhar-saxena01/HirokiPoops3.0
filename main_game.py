@@ -31,7 +31,7 @@ def redraw_window(win, player_group, mostly_everything, score):
     mostly_everything.draw(win)
 
     score_image = score_font.render(str(score), True, "red")
-    win.blit(score_image, (0, 0))
+    win.blit(score_image, (690, 10))
 
     pygame.display.update()
 
