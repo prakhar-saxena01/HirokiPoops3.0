@@ -30,3 +30,6 @@ class CrashMenu(Menu):
                                 40, color="black")
             self.blit_screen()
             # Add character select, main menu, and quit menu options here
+
+        if os.path.exists(f"{os.getcwd()}/img/tmp/screenshot.png"):
+            os.remove(f"{os.getcwd()}/img/tmp/screenshot.png")
