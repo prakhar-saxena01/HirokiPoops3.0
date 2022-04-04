@@ -41,7 +41,7 @@ def handle_collisions(win, player_group1: pygame.sprite.GroupSingle, poop_group:
         pygame.mixer.music.stop()
         player.die()
         # Return false for running
-        pygame.image.save(win, f"{os.getcwd()}/img/tmp/screenshot.png")
+        pygame.image.save(win, f"{os.getcwd()}/img/temporary/screenshot.png")
         return False
     else:
         return True

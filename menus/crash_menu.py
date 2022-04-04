@@ -10,7 +10,7 @@ class CrashMenu(Menu):
 
     def display_menu(self):
         self.run_display = True
-        image = load_image("img/tmp/screenshot.png").convert()
+        image = load_image("img/temporary/screenshot.png").convert()
 
         while self.run_display:
             self.game.check_events()
