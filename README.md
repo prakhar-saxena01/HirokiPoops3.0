@@ -5,7 +5,7 @@ Hiroki's Poops is a game where you fly around and dodge poops.
 
 
 ## Website
-https://t.googleplay.repl.co
+Coming soon
 
 
 ## Releases
